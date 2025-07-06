@@ -1,0 +1,239 @@
+/* Estilos */
+* {
+    box-sizing: border-box;
+}
+
+/* Fontes */
+@font-face {
+    font-family: minhaFonte1;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: minhaFonte2;
+    src: url(../fonts/Roboto-Black.ttf);
+}
+
+/* Paleta de cores - utilizando variáveis */
+/* para usar colocar: var(--botao) no lugar da cor */
+:root {
+    --menu: #1C3A5F;
+    --botao: #3A6FA1;
+    --hover: #6FA7D6;
+    --borda: #D7ECFA;
+    --fundo: #F9FBFD;
+    --texto: #1A1C1E;
+    --destaque: #D94B4B;
+}
+
+/* Corpo */
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom:60px;
+    font-family: minhaFonte1, sans-serif;
+    background-color: #f9f9f9;
+    height: 100vh;
+    display: flex;
+}
+
+/* Cabeçalho e logo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--menu), var(--botao));
+    color: var(--fundo);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+header img {
+    height: 60px;
+    margin-right: 15px;
+    padding: 0px 10px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    padding: 0px 16px;
+}
+
+/* Menu horizontal */
+ul {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--hover);
+    text-align: center;
+    z-index: 999;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: var(--texto);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: var(--menu);
+    color: var(--fundo);
+}
+
+li img {
+    height: 11px;
+    padding: 0px 10px;
+}
+
+/* Conteúdo principal */
+.conteudo-principal {
+    margin-top: 105px;
+    margin-left: 220px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-conteudo {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+.container-cabecalho {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.conteudo {
+    flex: 1;
+    padding-left: 16px;
+}
+
+/* Barra lateral e seus elementos */
+.sidebar {
+    position: fixed;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 100px);
+    background-color: var(--fundo);
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.sidebar h3 {
+    padding: 20px 16px 10px 16px;
+    margin-top: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: var(--texto);
+    padding: 5px 16px;
+}
+
+.sidebar a:hover {
+    background-color: var(--menu);
+    color: var(--fundo);
+}
+
+/* Rodapé */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--borda);
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+/* Formulário de login */
+body.pagina-login {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 750px;
+    width: 100%;
+}
+
+.login-imagem {
+    flex: 1;
+    background-image: url('../img/imagembd.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-formulario {
+    flex: 1;
+    padding: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-formulario h2 {
+    margin-bottom: 10px;
+    color: var(--texto);
+}
+
+.login-formulario input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid var(--menu);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-formulario button {
+    padding: 12px;
+    background-color: var(--botao);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-formulario button:hover {
+    background-color: var(--hover);
+}
+
+@media (max-width: 720px) {
+    .login-container {
+    flex-direction: column;
+    }
+
+    .login-imagem {
+    height: 200px;
+    }
+}
